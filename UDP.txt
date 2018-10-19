@@ -1,0 +1,13 @@
+#UDP Receiver
+computerrrrrrrrrrrrrrrrrr:
+
+gst-launch-1.0 udpsrc port=5022 ! application/x-rtp,encoding-name=H264 ! rtpjitterbuffer ! rtph264depay ! avdec_h264 ! videoconvert ! ximagesink
+
+
+
+#UDP Transmitter:
+3shan t5leeh mn el external cam , 5aly el transmitter :
+
+da lel piiiiiiiiiiii:
+
+gst-launch-1.0 v4l2src device="/dev/video0" ! video/x-raw,width=320,height=240 ! videoconvert ! x264enc tune=zerolatency ! rtph264pay ! udpsink host='bta3 el computer' port=5022
